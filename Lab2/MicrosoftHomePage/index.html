@@ -30,18 +30,25 @@
             font-size: 14px;
         }
         .hero {
+            position: relative;
+            height: 80vh;
+            background: url('https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Highlight-Surface-Pro-AI-11Ed-Sapphire-MC001-3000x1682:VP5-1920x600') no-repeat center center/cover;
             display: flex;
             align-items: center;
-            justify-content: center;
-            height: 80vh;
-            background: url('https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Highlight-M365-Icon-Bounce:VP2-859x540') no-repeat center center/cover;
-            background-size: 100%;
+            justify-content: flex-start;
+            padding-left: 5%;
             color: white;
-            text-align: center;
         }
+        
         .hero .content {
-            max-width: 600px;
+            background: white;
+            padding: 30px;
+            border-radius: 5px;
+            max-width: 550px;
+            color: black;
+            transform: translateY(-80px);
         }
+        
         .hero h1 {
             font-size: 2.5rem;
             margin-bottom: 20px;
@@ -100,6 +107,91 @@
             font-size: 0.9rem;
             color: #666;
         }
+        .products {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .product-card {
+            width: 250px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+            text-align: center;
+        }
+        
+        .product-card img {
+            width: 100%;
+        }
+        
+        .product-card .info {
+            padding: 15px;
+        }
+        
+        .product-card .info a {
+            display: block;
+            margin-top: 10px;
+            background: #0067b8;
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .categories {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            padding: 20px;
+        }
+        
+        .categories a {
+            text-decoration: none;
+            color: black;
+            font-size: 14px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .carousel-container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px; /* Отступ между каруселью и остальной частью страницы */
+        }
+        
+        .carousel-prev,
+        .carousel-next {
+            position: absolute;
+            top: 100%; /* Центрируем кнопки по вертикали */
+            transform: translateY(-50%);
+            background-color: #0067b8;
+            color: white;
+            border: none;
+            padding: 10px;
+            font-size: 20px;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+        
+        .carousel-prev {
+            left: 720px; /* Располагаем кнопку слева */
+        }
+        
+        .carousel-next {
+            right: 720px; /* Располагаем кнопку справа */
+        }
+        
+        .categories {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            padding: 20px;
+        }
+        
     </style>
 </head>
 <body>
@@ -110,67 +202,96 @@
         <nav>
             <a href="#">Microsoft 365</a>
             <a href="#">Teams</a>
+            <a href="#">Copilot</a>
             <a href="#">Windows</a>
             <a href="#">Surface</a>
             <a href="#">Xbox</a>
             <a href="#">Deals</a>
+            <a href="#">Support</a>
         </nav>
     </header>
+    
 
-    <div class="blue" style="text-align:center; background-color: #0067b8; margin:0"><p style="margin:0; padding:20px; color: white">Pay your way, with flexible payment options available at checkout. Learn more </p></div>
+    <div class="blue" style="text-align: center; background-color: #0067b8; margin:15;">
+        <b style="margin:0; padding:2 0px; color: white">Pay your way, with flexible payment options available at checkout. Learn more </b></div>
+    
     <section class="hero">
         <div class="content">
-            <h1>Discover what’s possible with Microsoft</h1>
-            <p>Find the tools and solutions that help you achieve more.</p>
-            <a href="#">Shop now</a>
+            <h2>Meet Surface Pro</h2>
+            <p>This laptop's unrivaled flexibility and AI features like Live Captions and Cocreator enable you to do more than you ever imagined.</p>
+            <a href="#" class="btn">Shop now</a>
         </div>
     </section>
 
-
-        <div style="cursor: pointer;">           
-            <img src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Content-Card-DOOM-The-Dark-Ages-Retail-Safe?wid=406&amp;hei=230&amp;fit=crop">
-            <h2 class="component-heading h3    ">DOOM: The Dark Ages Collector’s Bundle</h2>
-                     Get a head start on slaying demons with up to 2-day early access, a 12” DOOM Slayer statue, and more. 
-        </div>
-        <div class="link-group">
-                <a href="#">
-                     Pre-order now 
-                </a>
-        </div>
+    <div class="carousel-container">
+        <button class="carousel-prev">←</button> <!-- Кнопка для перехода на предыдущий элемент -->
+        <div class="categories">
             
-
-        <div>
-                <img src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Content-Card-Surface-Laptop-AI-7Ed-Sapphire-MC001?wid=406&amp;hei=230&amp;fit=crop" loading="lazy" class="card-img" alt="A Surface Laptop, 7th Edition, a Copilot+ PC, in the color Sapphire.">
-                                    <h2 class="component-heading h3    ">
-                     Surface Laptop, Copilot+ PC 
-                                    </h2>
-                     Unlock AI features like Live Captions and Cocreator with this exceptionally powerful laptop. 
         </div>
-        <div class="link-group"><a>Shop now</a>
+        <button class="carousel-next">→</button> <!-- Кнопка для перехода на следующий элемент -->
+    </div>
+    
+
+    <div class="categories">
+        <a href="#" style="color: #0067b8; text-decoration: underline;">
+            <img src="https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/Link-List-Icons-Surface-Devices?wid=40&hei=40" alt="Surface devices icon" style="margin-bottom: 10px; width: 35px">
+            <b>Shop Surface devices</b></a>
+        <a href="#" style="color: #0067b8; text-decoration: underline;">
+            <img src="https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/Link-List-Icons-Xbox-Games-Consoles?wid=40&hei=40" alt="Xbox icon" style="margin-bottom: 10px; width: 35px">
+            <b>Shop Xbox games and consoles</b></a>
+        <a href="#" style="color: #0067b8; text-decoration: underline;">
+            <img src="https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/Link-List-Icons-Accessories?wid=40&hei=40" alt="Keyboard & mouse icon" style="margin-bottom: 10px; width: 35px">
+            <b>Shop for accessories</b></a>
+        <a href="#" style="color: #0067b8; text-decoration: underline;">
+            <img src="https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/Link-List-Icons-Business?wid=40&hei=40" alt="Shop business icon" style="margin-bottom: 10px; width: 35px">
+            <b>Shop for your business</b></a>
+        <a href="#" style="color: #0067b8; text-decoration: underline;">
+            <img src="https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/Link-List-Icon-PC?wid=40&hei=40" alt="PC icon" style="margin-bottom: 10px; width: 35px">
+            <b>Find your next PC</b></a>
+        <a href="#" style="color: #0067b8; text-decoration: underline;">
+            <img src="https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/Link-List-Icons-Microsoft-365?wid=40&hei=40" alt="Microsoft 365 icon" style="margin-bottom: 10px; width: 35px">
+            <b>Choose your Microsoft 365</b>
+        </a>
+    </div>
+
+    <div class="products">
+        <div class="product-card">
+            <img src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Content-Card-Surface-Laptop-AI-7Ed-Sapphire-MC001?wid=406&hei=230&fit=crop">
+            <div class="info">
+                <h3>Surface Laptop, <br>Copilot + PC</h3>
+                <p>Unlock AI features like Live Captions and Cocreator.</p>
+                <a href="#">Shop now</a>
+            </div>
         </div>
 
-        <div style="cursor: pointer;">           
+        <div class="product-card">
+            <img src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/gldn-XSS-CP-Xbox-Series-S-Evergreen?wid=406&hei=230&fit=crop">
+            <div class="info">
+                <h3>Xbox Series S</h3>
+                <p>Next-gen performance in the smallest Xbox ever.</p>
+                <a href="#">Shop Xbox Series S</a>
+            </div>
+        </div>
+
+        <div class="product-card">
             <img src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Content-Card-Xbox-Wireless-Controller-Pulse-Cipher?wid=406&hei=230&fit=crop">
-            <h2 class="component-heading h3    ">DOOM: The Dark Ages Collector’s Bundle</h2>
-                     Get a head start on slaying demons with up to 2-day early access, a 12” DOOM Slayer statue, and more. 
-        </div>
-        <div class="link-group">
-                <a href="#">
-                     Pre-order now 
-                </a>
-        </div>
-            
-
-        <div>
-                <img src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/gldn-XSS-CP-Xbox-Series-S-Evergreen?wid=406&hei=230&fit=crop">
-                                    <h2 class="component-heading h3    ">
-                     Surface Laptop, Copilot+ PC 
-                                    </h2>
-                     Unlock AI features like Live Captions and Cocreator with this exceptionally powerful laptop. 
-        </div>
-        <div class="link-group"><a>Shop now</a>
+            <div class="info">
+                <h3>Xbox controllers</h3>
+                <p>Elite, wireless, adaptive-find your style.</p>
+                <a href="#">Shop now</a>
+            </div>
         </div>
 
+        <div class="product-card">
+            <img src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Content-Card-Copilot-Native-App-ROW?wid=380&hei=213&fit=crop">
+            <div class="info">
+                <h3>Copilot is your AI companion</h3>
+                <p>Always by your side, ready to support you whenever and wherever you need it.</p>
+                <a href="#">Download the Copilot app </a>
+            </div>
+        </div>
+    </div>
+    
 
     <footer class="footer">
         © Microsoft 2025. All rights reserved.

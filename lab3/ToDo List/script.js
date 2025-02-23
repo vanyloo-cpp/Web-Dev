@@ -4,8 +4,9 @@ let inputField = document.getElementById("task");
 //When pressed Add-button
 function addTask() { 
     let taskText = inputField.value.trim(); 
+    if (taskText === "") alert("Please enter something"); 
     if (taskText === "") return; 
- 
+    
     let li = document.createElement("li"); 
     li.innerHTML = `<input type="checkbox" onclick="toggleTask(this)"> 
                     <span class="task-text">${taskText}</span> 

@@ -20,6 +20,7 @@ export class ProductPageComponent implements OnInit{
   getParamValue:any;
   getProductData:any=[];
   filterProductData:any=[];
+  LikedProducts:number[] = [];
   constructor(private route:ActivatedRoute, private getData:GetDataService){
 
   }
@@ -36,8 +37,18 @@ export class ProductPageComponent implements OnInit{
   }
 
   addLike(productId: number): void {
-    this.getData.addLike(productId);
+    const index = this.LikedProducts.indexOf(productId);
+  
+    if (index === -1) {
+      this.LikedProducts.push(productId);
+      this.getData.addLike(productId);
+    } else {
+      this.LikedProducts.splice(index, 1);
+      this.getData.removeLike(productId);
+    }
   }
+  
+  
 
   removeProduct(productId: number): void {
     this.filterProductData = this.filterProductData.filter((product: any) => product.pdId !== productId);

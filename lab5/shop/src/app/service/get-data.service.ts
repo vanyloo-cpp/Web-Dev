@@ -13,6 +13,13 @@
         product.pdLikes += 1;
       }
     }
+    
+    removeLike(productId: number) {
+      let product = this.productData.find(p => p.pdId === productId);
+      if (product && product.pdLikes > 0) {
+        product.pdLikes -= 1;
+      }
+    }
 
     categoriesData = [
       {

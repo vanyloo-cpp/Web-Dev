@@ -12,20 +12,7 @@ import { RouterModule } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
-  bannerImgs = [
-    {
-      id: 1,
-      img: '/images/banner/ef637eb93bf1a887.webp',
-    },
-    {
-      id: 2,
-      img: '/images/banner/9021283f0be266c1.webp',
-    },
-    {
-      id: 3,
-      img: '/images/banner/7dcc28ed89760319.webp',
-    },
-  ];
+  
 
 
   getCategoriesData:any;

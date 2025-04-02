@@ -8,13 +8,13 @@ import { AlbumsService } from '../services/albums.service';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './photos.component.html',
-  styleUrl: './photos.component.css'
+  styleUrls: ['./photos.component.css'] // ✅ исправлено (было styleUrl, должно быть styleUrls)
 })
 export class PhotosComponent implements OnInit {
   photos: any[] = [];
   albumId!: number;
 
-  constructor(private route: ActivatedRoute, private albumsService: AlbumsService) {}
+  constructor(private route: ActivatedRoute, private albumsService: AlbumsService) { }
 
   ngOnInit() {
     this.albumId = Number(this.route.snapshot.paramMap.get('id'));
